@@ -6,7 +6,7 @@ actividades = {"prueba_act":0,
                "straight_ahead":2,
                "normal_stop":3,
                "emergency_stop":4,
-               "communication":5,
+               "establish_comm":5,
                "slow_down":6}
 usuarios = {"prueba_usu":0,
 			"javi":1,

@@ -11,5 +11,18 @@ Desarrollado por:
 python3 collect.py usuario accion
 ```
 
+**Preprocesamiento de los datos**
+```bash
+python3 preprocess_dataset.py
+```
+
 **Entrenamiento de la red**
-...
+ * Decission Tree
+```bash
+python3 train_cnn1d.py
+```
+
+ * Decission Tree
+```bash
+python3 train_decission_tree.py
+```

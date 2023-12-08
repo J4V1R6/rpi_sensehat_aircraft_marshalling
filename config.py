@@ -1,8 +1,8 @@
 data_folder = "data"
 graph_folder = "graph"
 
-actividades = {"prueba_act":0,
-               "identify_gate":1,
+#"prueba_act":0
+actividades = {"identify_gate":1,
                "straight_ahead":2,
                "normal_stop":3,
                "emergency_stop":4,

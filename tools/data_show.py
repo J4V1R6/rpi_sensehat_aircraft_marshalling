@@ -8,7 +8,11 @@ def return_key_from_val(val,dicc):
 			return key
 
 def run_show(filepath):
-	if "/" in filepath: folder,filename = filepath.split("/")
+	if "/" in filepath: 
+		list_items = filepath.split("/")
+		filename = list_items[-1]
+		list_items.pop(-1)
+		folder = "/".join(list_items)
 	else: filename=filepath
 	
 	name,ext = filename.split(".")
@@ -53,4 +57,3 @@ def run_show(filepath):
 	#fig.savefig(outputpath,bbox_inches='tight')#dpi=600, 
 	
 	plt.show()
-

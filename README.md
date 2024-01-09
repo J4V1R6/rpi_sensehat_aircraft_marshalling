@@ -1,4 +1,4 @@
-# rpi_sensehat_aircraft_marshalling
+# Aircraft Marshalling
 Trabajo para la asignatura Aplicaciones IOT, del Máster de Ingeniería de Telecomunicaciones de la Universidad de Sevilla.
 Desarrollado por:
  - Roberto Lama Rodríguez
@@ -31,22 +31,22 @@ python3 train_densev1.py
 python3 train_decission_tree.py
 ```
 
-		* Red Convolucional 1 dimensión: 1 convolucional + 1 densa 
+ * Red Convolucional 1 dimensión: 1 convolucional + 1 densa 
 ```bash
 python3 train_cnn1d_1c1d.py
 ```
 
-		* Red Convolucional 1 dimensión: 1 convolucional + 2 densas 
+ * Red Convolucional 1 dimensión: 1 convolucional + 2 densas 
 ```bash
 python3 train_cnn1d_1c2d.py
 ```
 
-		* Red Convolucional 1 dimensión: 2 convolucionales + 1 densa 
+ * Red Convolucional 1 dimensión: 2 convolucionales + 1 densa 
 ```bash
 python3 train_cnn1d_2c1d.py
 ```
 
-		* Red Convolucional 1 dimensión: 2 convolucionales + 2 densas
+ * Red Convolucional 1 dimensión: 2 convolucionales + 2 densas
 ```bash
 python3 train_cnn1d_2c2d.py
 ```

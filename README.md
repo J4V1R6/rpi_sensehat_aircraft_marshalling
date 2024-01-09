@@ -17,12 +17,33 @@ python3 preprocess_dataset.py
 ```
 
 **Entrenamiento de la red**
- * Decission Tree
+
+ * Red puramente densa
 ```bash
-python3 train_cnn1d.py
+python3 train_densev1.py
 ```
 
- * Decission Tree
+ * Árbol de decisión
 ```bash
 python3 train_decission_tree.py
+```
+
+		* Red Convolucional 1 dimensión: 1 convolucional + 1 densa 
+```bash
+python3 train_cnn1d_1c1d.py
+```
+
+		* Red Convolucional 1 dimensión: 1 convolucional + 2 densas 
+```bash
+python3 train_cnn1d_1c2d.py
+```
+
+		* Red Convolucional 1 dimensión: 2 convolucionales + 1 densa 
+```bash
+python3 train_cnn1d_2c1d.py
+```
+
+		* Red Convolucional 1 dimensión: 2 convolucionales + 2 densas
+```bash
+python3 train_cnn1d_2c2d.py
 ```

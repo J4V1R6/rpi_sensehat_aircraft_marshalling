@@ -26,6 +26,3 @@ python3 train_cnn1d.py
 ```bash
 python3 train_decission_tree.py
 ```
-
-## Nota
-No hay obligación de hacer memoria del trabajo

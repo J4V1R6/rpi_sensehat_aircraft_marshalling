@@ -120,70 +120,70 @@ for i in range(10):
     
     # model.save_weights('./models/%s_decission_tree_model_%d.h5'%(datetime.datetime.now().strftime("%Y%m%d_%H%M%S"),i))
 
-print(scores)
+    print(scores)
 
-from numpy import mean
-print("Accuracy medio de:",mean(scores))
+    from numpy import mean
+    print("Accuracy medio de:",mean(scores))
 
-from matplotlib import pyplot
-pyplot.figure()
-pyplot.boxplot(scores)
-pyplot.title('Accuracy para max_deph=%s, min_samples_split=%s, min_samples_leaf=%s, criterion=%s' % (parametros['max_depth'], parametros['min_samples_split'], parametros['min_samples_leaf'], parametros['criterion']))
-pyplot.ylabel("Accuracy (%)")
-pyplot.grid(linestyle='-', linewidth=0.3)
+    from matplotlib import pyplot
+    pyplot.figure()
+    pyplot.boxplot(scores)
+    pyplot.title('Accuracy para max_deph=%s, min_samples_split=%s, min_samples_leaf=%s, criterion=%s' % (parametros['max_depth'], parametros['min_samples_split'], parametros['min_samples_leaf'], parametros['criterion']))
+    pyplot.ylabel("Accuracy (%)")
+    pyplot.grid(linestyle='-', linewidth=0.3)
 
 
-#%% matriz de confusion
+    #%% matriz de confusion
 
-from sklearn.metrics import confusion_matrix
+    from sklearn.metrics import confusion_matrix
 
-ypred = modelo_final.predict(X_test)
+    ypred = modelo_final.predict(X_test)
 
-cm = confusion_matrix(y_test, ypred)
-print(cm)
+    cm = confusion_matrix(y_test, ypred)
+    print(cm)
 
-#%% matriz de confusión 
+    #%% matriz de confusión 
 
-#Se muestra la matriz de confusion de la ultima iteracion del bucle for. 
-#Si se quiere mostrar la de todas las iteraciones, meter la llamada a la funcion dentro del bucle for
+    #Se muestra la matriz de confusion de la ultima iteracion del bucle for. 
+    #Si se quiere mostrar la de todas las iteraciones, meter la llamada a la funcion dentro del bucle for
 
-import numpy as np
+    import numpy as np
 
-import itertools
+    import itertools
 
-acts = y.unique()
+    acts = y.unique()
 
-def plot_confusion_matrix(cm, classes,
-                          normalize=False,
-                          title='Confusion matrix',
-                          cmap=plt.cm.Blues):
-    """
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
-    """
-    plt.imshow(cm, interpolation='nearest', cmap=cmap)
-    plt.colorbar()
-    tick_marks = np.arange(len(classes))
-    plt.xticks(tick_marks, classes, rotation=45)
-    plt.yticks(tick_marks, classes)
+    def plot_confusion_matrix(cm, classes,
+                            normalize=False,
+                            title='Confusion matrix',
+                            cmap=plt.cm.Blues):
+        """
+        This function prints and plots the confusion matrix.
+        Normalization can be applied by setting `normalize=True`.
+        """
+        plt.imshow(cm, interpolation='nearest', cmap=cmap)
+        plt.colorbar()
+        tick_marks = np.arange(len(classes))
+        plt.xticks(tick_marks, classes, rotation=45)
+        plt.yticks(tick_marks, classes)
 
-    if normalize:
-        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        if normalize:
+            cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
 
-    thresh = cm.max() / 2.
-    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-        plt.text(j, i, cm[i, j],
-                 horizontalalignment="center",
-                 color="white" if cm[i, j] > thresh else "black")
+        thresh = cm.max() / 2.
+        for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+            plt.text(j, i, cm[i, j],
+                    horizontalalignment="center",
+                    color="white" if cm[i, j] > thresh else "black")
 
-    plt.tight_layout()
-    plt.ylabel('Actual')
-    plt.xlabel('Prediction')
-    plt.xticks(range(clases), acts)
-    plt.yticks(range(clases), acts)
-    
+        plt.tight_layout()
+        plt.ylabel('Actual')
+        plt.xlabel('Prediction')
+        plt.xticks(range(clases), acts)
+        plt.yticks(range(clases), acts)
+        
 
-plt.figure()
-plot_confusion_matrix(cm, classes = range(clases))  
+    plt.figure()
+    plot_confusion_matrix(cm, classes = range(clases))  
 
-plt.show()
+    plt.show()
